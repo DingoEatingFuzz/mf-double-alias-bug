@@ -1,6 +1,6 @@
-import DS from 'ember-data';
+import JSONSerializer from 'ember-data/serializers/json';
 
-export default DS.JSONSerializer.extend({
+export default JSONSerializer.extend({
   attrs: {
     innerFragments: 'inner-fragments',
   },

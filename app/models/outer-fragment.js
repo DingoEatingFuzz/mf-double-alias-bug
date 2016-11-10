@@ -1,7 +1,10 @@
-import MF from 'model-fragments';
-import DS from 'ember-data';
+import Fragment from 'model-fragments/fragment';
+import {
+  fragmentArray,
+} from 'model-fragments/attributes';
+import attr from 'ember-data/attr';
 
-export default MF.Fragment.extend({
-  innerFragments: MF.fragmentArray('inner-fragment'),
-  other: DS.attr(),
+export default Fragment.extend({
+  innerFragments: fragmentArray('inner-fragment'),
+  other: attr(),
 });

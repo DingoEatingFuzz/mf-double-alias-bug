@@ -1,7 +1,7 @@
-import DS from 'ember-data';
-import MF from 'model-fragments';
+import Fragment from 'model-fragments/fragment';
+import attr from 'ember-data/attr';
 
-export default MF.Fragment.extend({
-  prop1: DS.attr(),
-  prop2: DS.attr(),
+export default Fragment.extend({
+  prop1: attr(),
+  prop2: attr(),
 });

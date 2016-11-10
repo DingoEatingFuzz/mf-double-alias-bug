@@ -1,6 +1,8 @@
-import DS from 'ember-data';
-import MF from 'model-fragments';
+import Model from 'ember-data/model';
+import {
+  fragment,
+} from 'model-fragments/attributes';
 
-export default DS.Model.extend({
-  someProp: MF.fragment('outer-fragment'),
+export default Model.extend({
+  someProp: fragment('outer-fragment'),
 });

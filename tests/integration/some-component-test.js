@@ -2,6 +2,11 @@ import Ember from 'ember';
 import Pretender from 'pretender';
 import hbs from 'htmlbars-inline-precompile';
 import { test, moduleForComponent } from 'ember-qunit';
+import fragmentTransformInitializer from 'test-mf-bug/initializers/model-fragments';
+
+function setupEmberData(owner) {
+  fragmentTransformInitializer.initialize(owner);
+}
 
 var beforeRecord = {
   data: {
@@ -36,9 +41,14 @@ var afterRecord = {
 
 moduleForComponent('some-component', 'Some Component Tests', {
   integration: true,
+  beforeEach() {
+    let owner = Ember.getOwner(this);
+    setupEmberData(owner);
+  }
 });
 
 test('changing properties and saving should work', function(assert) {
+
   var done = assert.async();
   var api = startAPI();
   var store = this.container.lookup('service:store');
